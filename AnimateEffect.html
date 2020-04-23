@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Animate Effect</title>
+        <h1>ANNIMATE EFFECTE</h1>
+        <button id="btn1">Clike me 1</button>
+        <button id="btn2">Clike me 2</button>
+        <button id="btn3">Clike me 3</button>
+    </head>
+
+<body>
+    <link rel="stylesheet" href="style2.css">
+    <p id="p1"> this paragraph 1</p><br><br>
+    <p id="p2"> this paragraph 2</p><br><br>
+    <p id="p3"> this paragraph 3</p><br><br>
+    <p id="p4"> this paragraph 4</p><br><br>
+    <ul>
+        <li>java</li>
+        <li>c</li>
+        <li>javascript</li>
+        <li>python</li>
+    </ul>
+<div id="id1" class="myCube">
+    <p>MY CUBE</p>
+</div>
+</body>
+
+<script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function (){
+        $("#btn1").click(function(){
+            //alert("working 1")
+            $("#id1").animate({
+                left :'150px',
+                opacity :'1',
+                width :'100px',
+                height:'100px'
+
+
+            },1000)
+            
+
+        })
+    })
+
+    $(document).ready(function (){
+        $("#btn2").click(function (){
+            alert("working 2")
+            
+        })
+    })
+
+    $(document).ready(function (){
+        $("#btn3").click(function (){
+            alert("working 3")
+            
+        })
+    })
+
+    </script>
+
+
+</html>

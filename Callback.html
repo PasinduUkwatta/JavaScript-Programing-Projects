@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>call back</title>
+        <h1>CALLBACK</h1>
+        <button id="btn1" style="color: black;background-color: chartreuse;" > TOGGLE</button>
+    </head>
+    <body>
+        <div class="div1">
+            <p id="p1">this is paragraph 1</p><br><br>
+            <p id="p2">this is paragraph 2</p><br><br>
+            <p id="p3">this is paragraph 3</p><br><br>
+
+        
+        </div>
+
+        <div id="div2">
+            <ul>
+                <li>java</li>
+                <li>javascript</li>
+                <li>python</li>
+                <li>c</li>
+            </ul>
+
+        </div>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            //in this callback is hapeeening, after the toggle only the alert is working
+            //we can implement this by puttitng the method inside the annoymues function
+            $(".div1").fadeToggle(3000,function(){
+
+                alert("toggle working")
+
+            })
+
+        })
+    })
+    
+    </script>
+
+
+</html>

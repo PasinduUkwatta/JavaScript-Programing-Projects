@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>j query selectors</title>
+        <h1>J QUERY SELECTORS</h1>
+        <!--from this we are calling the css file that we have created separtly-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <!--
+    in this we are using the cdn jqueery , beacuse it is fast to use ,more security
+    easy to implemt, always updatebale
+    -->
+    <body>
+        <h2 id="h2">selectors in j query</h2>
+       
+        <br>
+        <br>
+        <button id="btn1" onclick="func1()">CLICK ME </button>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    function func1()
+    {
+        //in this we are calling the jquery file from the internet
+        //we must use # sign when we are call using the id name
+       $("#h2").fadeToggle(150)
+
+    }
+    </script>
+    
+</html>

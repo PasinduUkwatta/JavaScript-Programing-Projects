@@ -1,0 +1,8 @@
+.myCube{
+    width: 50;
+    height: 50;
+    background-color: aqua;
+    opacity: 0.6;
+    position: absolute;
+    padding: 20px;
+}

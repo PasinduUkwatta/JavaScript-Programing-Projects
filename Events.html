@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Events</title>
+        <h1>EVENTS</h1>
+    </head>
+    <body>
+        <div id="first" class="c1">
+            <p>this is first paragraph in first dev</p><br><br>
+            <p>this is second paragraph in first dev</p>
+        </div>
+
+        <div id="second" class="c1">
+            <p>this is first paragraph in second dev</p><br><br>
+            <p>this is second paragraph in second dev</p>
+        </div>
+        
+        <div id="third" ><br><br>
+            <ul>
+                <li>java</li>
+                <li>python</li>
+                <li>c</li>
+                <li>javascript</li>
+            </ul>
+            <br><br>
+            
+        </div>
+        <button >click me</button>
+    </body>
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+    <script>
+       
+        $("button").click(func1)
+        function func1()
+        {
+            $(".c1").fadeToggle(100)
+            $("li:even").fadeToggle(100)
+
+          
+           
+        }
+
+    </script>
+</html>

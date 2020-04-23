@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Chaining</title>
+        <h1>CHAINING</h1>
+        <button id="btn1" style="color: chartreuse;background-color: black;">  TOGGLE</button>
+    </head>
+
+    <body>
+        <div id="div1" style="border: 10px;border-color: blue;padding: 2px;">
+            <p id="p1">paragraph 1</p><br><br>
+            <p id="p2">paragraph 2</p><br><br>
+            <p id="p3">paragraph 3</p><br><br>
+            <p id="p4">paragraph 4</p><br><br>
+        
+        </div>
+        
+    </body>
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#div1").slideUp(2000).slideDown(2000).fadeOut(2000).fadeIn(2000,function(){
+                    alert("chainig done")
+
+                })
+               
+                
+            })
+        })
+
+
+    </script>
+</html>

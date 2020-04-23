@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>MOuse Hover</title>
+        <h1>MOUSE HOVER</h1>
+    </head>
+
+    <body>
+        <button id="btn1">CLICK ME</button>
+        <p id="p1">this is first paragraph 1</p><br><br>
+        <p id="p2">this is first paragraph 2</p><br><br>
+        <p id="p3">this is first paragraph 3</p><br><br>
+        <p id="p4">this is first paragraph 4</p><br><br>
+
+       
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        $("button").hover(func1,func2)
+
+        function func1()
+        {
+            document.getElementById("p2").style.color ="red"
+            $("#p1").fadeToggle(1000)
+        }
+
+        
+        function func2()
+        {
+            document.getElementById("p4").style.color ="green"
+            $("#p3").fadeToggle(1000)
+        }
+
+       
+    })
+
+
+
+    </script>
+
+
+</html>

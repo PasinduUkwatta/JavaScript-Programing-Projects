@@ -1,0 +1,93 @@
+<html>
+    <h1>EFFECTS IN HTML</h1>
+    
+    <link rel="stylesheet" href="style1.css">
+
+    <body>
+        <button id="btn1">CLICK ME 1</button>
+        <button id="btn2">CLICK ME 2</button>
+        <div id="mydivs">
+            <p>this is paragrph</p>
+        </div>
+        
+
+        <div id="mydivs">
+            <p>first paragrph</p><br>
+            <p>second paragrph</p><br>
+
+            <p>third paragrph</p><br>
+        </div>
+        <div>
+            <ul>
+                <li>java</li>
+                <li>c</li>
+                <li>python</li>
+                <li>javascrpit</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>maths</li>
+                <li>science</li>
+                <li>english</li>
+                <li>ict</li>
+            </ul>
+        </div>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript" >
+    $(document).ready(function(){
+
+        $("#btn1").hover(func1,func2)
+        {
+            function func1()
+            {
+                
+            document.getElementById("mydivs").style.color="yellow"
+            $("#mydivs").fadeToggle(500)
+        
+            }
+            function func2()
+            {
+                document.getElementById("mydivs").style.color="brown"
+                $("#mydivs").fadeToggle(500)
+
+            }
+
+        
+        
+      
+
+        }
+        $("#btn2").hover(func3,func4)
+        
+        {
+            function func3()
+            {
+                document.getElementById("p").style.color="blue"
+                $("#p").fadeToggle(500)
+
+      
+            
+        }
+
+            function func4()
+            {
+                document.getElementById("p").style.color="green"
+                $("#p").fadeToggle(500)
+            }
+
+        }
+
+        
+    })
+       
+    </script>
+
+</html>

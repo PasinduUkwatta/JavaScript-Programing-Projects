@@ -1,0 +1,63 @@
+<!--
+
+    j query link:
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+-->
+
+
+
+
+<html>
+    <head>
+        <title>Selectors Actions</title>
+        <h1>SELECTORS ACTIONS</h1>
+    </head>
+
+    <body>
+        <h2>Selctors up to query</h2>
+
+        <div id="first" class="cl">
+            <p>this is first paragraph division 1</p>
+            <p>this is a second paragraph division 1</p>
+        </div>
+        <br><br>
+
+        <div id="second" class="c1">
+            <p>this is a third paragraph in division 2 </p>
+            <p>this is a fourth paragraph in division 2 </p>
+        </div>
+        <br>
+        <br>
+
+        <div id="third" class="c1">
+            <p>this is a paragraph 3</p>
+            <ul>
+                <li>javaa</li>
+                <li>c</li>
+                <li>python</li>
+                <li>javascript</li>
+            </ul>
+        </div>
+        <br><br>
+        <button id="btn" onclick="func1()" style="color: aqua;">CLICK ME</button>
+
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+    function func1()
+    
+    {
+        $("#first").fadeToggle(100)
+        $("#second").fadeToggle(300)
+        $("#third").fadeToggle(600)
+
+    }
+
+    </script>
+</html>

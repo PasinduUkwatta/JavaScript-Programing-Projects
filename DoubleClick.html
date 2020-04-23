@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Double click</title>
+        <h1>DOUBLE CLICK</h1>
+    </head>
+
+    <body>
+        <p id="p1">this  is para 1</p><br><br>
+        <p id="p2">this  is para 2</p><br><br>
+        <p id="p3">this  is para 3</p><br><br>
+        <p id="p4">this  is para </p><br><br>
+
+        <button>CLICK ME </button>
+    </body>
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+     <script type="text/javascript">
+     $(document).ready(function (){
+//this will set the fucntin will call only when the doble click is done
+        $("button").dblclick(func1)
+
+        function func1()
+        {
+            $("#p1").fadeToggle(100)
+            document.getElementById("p4").style.color = "blue"
+            $("#p2").fadeToggle(200)
+            $("#p3").fadeToggle(300)
+            $("#p4").fadeToggle(400)
+        }
+     })
+
+     </script>
+    
+</html>

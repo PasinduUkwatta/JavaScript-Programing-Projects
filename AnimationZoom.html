@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Animations Zoomming </title>
+        <h1>Zoom Animations</h1>
+        <script type="text/javascript">
+
+        var width = 100
+        var difference =2
+        intervalId = 0
+       
+
+        function incerase()
+        {
+            clearInterval(intervalId)
+            intervalId = setInterval(expand,10)
+        }
+
+        function expand()
+        {
+            if(width<200)
+            {
+                width=width+difference
+                document.getElementById("pc").style.width = width
+                console.log(width)
+                
+            }
+            else
+            {
+                clearInterval(intervalId)
+            }
+        }
+
+        function decrease()
+        {
+            clearInterval(intervalId)
+            intervalId = setInterval(shrink,10)
+        }
+
+        function shrink()
+        {
+            if(width>100)
+            {
+                width=width-difference
+                document.getElementById("pc").style.width = width
+                console.log(width)
+            }
+            else
+            {
+                clearInterval(intervalId)
+            }
+        }
+    
+    
+
+           
+      
+        
+        </script>
+    </head>
+
+    <body>
+        <br>
+        <br>
+        <img src="pc.png" 
+             id="pc" 
+             width="100"
+             onmouseover="incerase()"
+             onmouseout="decrease()"
+             >
+    </body>
+</html>
