@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Scope of the Variables</title>
+        <h1>SCOPE OF THE VARIBALES</h1>
+    </head>
+
+    <body>
+        <script type="text/javascript" >
+         // this var x can  acces in the whole code
+         var x = 10
+         var y= 20
+         document.write("global variable :", x)
+
+         function localVaribale()
+         {
+             //this can access only in the function
+             var x = 5
+             document.write(" local variablr :",x)
+             document.write("global variable acces form the function :", y)
+
+         }
+        localVaribale();
+        
+        </script>
+    </body>
+</html>
