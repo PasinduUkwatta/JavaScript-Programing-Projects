@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>ReG X</title>
+        <h1>REGULER EXPRESISONS</h1>
+
+        <script type="text/javascript">
+        function func1()
+        {
+            var name = document.getElementById("name").value
+             var regx = /[E00 e00]/
+
+
+        if(regx.test(name))
+        {
+            alert("valid user name")
+        }
+        else
+        {
+            alert("invalid user name")
+            document.getElementById("label").style.visibility="visible"
+        }
+
+
+        }
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+
+            <input type="text"  id="name" placeholder="enter your name ">
+            <br>
+            <label id ="label" style="color: red;visibility: hidden;" >Invalid user name</label>
+            <br>
+            <button onclick="func1()">CLICK ME</button>
+        </form>
+    </body>
+</html>

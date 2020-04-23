@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Regular Expressiond</title>
+        <h1>REGULAR EXPRESSIONS</h1>
+        <script type="text/javascript">
+        function func1()
+        {
+            var name = document.getElementById("name").value
+           //in this between // marks the valuse should palce , we use i to cancel the case sensetive
+            var regx = /E00/i;
+
+            if(regx.test(name))
+            {
+                alert("valid username")
+            }
+            else
+            {
+                alert("invalid username ")
+                document.getElementById("lbluser").style.visibility="visible"
+            }
+
+
+        }
+        
+        </script>
+    </head>
+
+    <body>
+        <form action="Massage.html">
+              <input type="text" name="name" id="name" placeholder="enter your name">
+              <label id="lbluser" style ="color: red;visibility:hidden;">Invalid UserName</label>
+              <br>
+              <br>
+              <button onclick="func1()" type="button" >Submit</button>
+
+        </form>
+    </body>
+</html>

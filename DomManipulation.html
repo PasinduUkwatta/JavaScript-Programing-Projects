@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>DOM MANIPULATION</title>
+        <h1>
+            Dom Manipilation
+        </h1>
+        <script type="text/javascript">
+        function func1()
+        {//in this para variable can access whole para at one time due to getElemntByTagName func
+            var para = document.getElementsByTagName("p")
+
+            para[0].style.color ="red"
+            para[1].style.fontSize =24
+            para[2].style.fontStyle = "italic"
+            para[3].style.fontStyle ="bold"
+            
+        }
+
+            
+        </script>
+
+        
+    </head>
+
+    <body>
+        <p>this is para 1</p>
+        <p>this is para 2</p>
+        <p>this is para 3</p>
+        <p>this is para 4</p>
+        <p>this is para 5</p>
+        <br>
+        <br>
+        <button onclick="func1()">CLICK ME</button>
+    </body>
+</html>

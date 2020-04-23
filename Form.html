@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Simple Form</title>
+        <h1>SIMPLE FORM</h1>
+        <script type="text/javascript">
+        function validate()
+        {
+            var name = document.getElementById("name")
+            var password = document.getElementById("password")
+
+            if(name.value.trim()=="" || password.value.trim()=="")
+            {
+                alert("cannot have blank values")
+                return false
+            }
+            else
+            {
+                true
+            }
+        }
+
+        </script>
+    </head>
+
+    <body>
+        <form onsubmit="return validate()" action="Massage.html">
+            <input id = "name"type="text " placeholder="enter your name here">
+            <br>
+            <br>
+
+            <input id = "password" type="password " placeholder="enter your password here">
+            <br>
+            <br>
+            <button type="submit" >SUBMIT</button>
+
+
+
+        </form>
+
+    </body>
+</html>

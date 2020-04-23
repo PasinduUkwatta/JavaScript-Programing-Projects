@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Form Validate</title>
+        <h1>FORM VALIDATE</h1>
+        <script type="text/javascript">
+        function func1()
+        {
+            var uname = document.getElementById("name")
+            var upass = document.getElementById("pass")
+
+            if(uname.value.trim() =="")
+            {
+                alert("blank username")
+                uname.style.border = "solid 3px red"
+                //return false beacuse then redirect to the next page will not happen
+                return false
+
+            }
+            else if(upass.value.trim() =="")
+            {
+                alert("blank password")
+                upass.style.border = "solid 3px red"
+                return false
+
+            }
+            else if (uname.value.trim().length <5)
+            {
+                alert("short password")
+                return false
+
+            }
+            else
+            {
+                true
+            }
+
+
+
+        }
+
+
+        </script>
+    </head>
+
+    <body>
+        <form onsubmit=" return func1()" action="Massage.html">
+            <input id="name" type="text" placeholder="enter your name">
+            <br>
+            <br>
+            <input id="pass" type="password" placeholder="enter your password">
+            <br>
+            <br>
+            <button type="submit">SUBMIT</button>
+
+
+        </form>
+    </body>
+</html>

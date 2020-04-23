@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Dom MANI FOR loop</title>
+        <h1>DOM MANIPULATION BY FOR LOOP</h1>
+        <script type="text/javascript">
+        function func1()
+        {
+            var para = document.getElementsByTagName("p")
+            //in this functon all elements are put in to the for loop and addding styles at once
+
+            for(var i=0;i<para.length;i++)
+            {
+                para[i].style.color = "blue"
+                para[i].style.fontSize =25
+                
+            }
+        }
+
+        </script>
+    </head>
+
+    <body>
+        <p>this is para 1</p>
+        <p>this is para 2</p>
+        <p>this is para 3</p>
+        <p>this is para 4</p>
+        <p>this is para 5</p>
+        <br>
+        <br>
+        <button onclick="func1()">CLICK ME</button>
+    </body>
+</html>

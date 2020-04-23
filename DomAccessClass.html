@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Dom manipultion class</title>
+        <h1>DOM MANIPULTION IN CLASS</h1>
+        <script type="text/javascript">
+        function func1(){
+
+            var element = document.getElementsByClassName("myset")
+
+            for(var x=0;x<element.length;x++)
+            {
+                element[x].style.color =" red"
+                element[x].style.fontSize =35
+
+            }
+
+        }
+
+
+        </script>
+    </head>
+
+    <body>
+        <p class="myset">this is para 1</p>
+        <p>this is para 2</p>
+        <p class="myset">this is para 3</p>
+        <p>this is para 4</p>
+        <p class="myset">this is para 5</p>
+        <a href="#" class="myset">this is an anchor tag</a>
+        <br>
+        <br>
+        <button onclick="func1()">CLICK ME</button>
+
+    </body>
+</html>

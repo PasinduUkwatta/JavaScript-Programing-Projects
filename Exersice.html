@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Reguler Expresion</title>
+        <h1>REGULER EXPRESION</h1>
+        <script>
+            function func1()
+            {
+                var num = document.getElementById("number").value
+
+                var regx =/^[5-9][a-z]{8}[0]$/
+
+                if(regx.test(num))
+                {
+                    document.getElementById("label").innerHTML="valid"
+                    document.getElementById("label").style.color="green"
+                    document.getElementById("label").style.visibility="visible"
+                }
+                else
+                {
+                    document.getElementById("label").innerHTML="invalid"
+                    document.getElementById("label").style.color="red"
+                    document.getElementById("label").style.visibility="visible"
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+            <input type="text" name="" id="number" placeholder="enter your number">
+            <br>
+            <br>
+            <label id="label" style="color: red;visibility: hidden;">Invalid</label>
+            <br>
+            <br>
+            <button onclick="func1()">CLICK ME</button>
+
+
+        </form>
+    </body>
+</html>

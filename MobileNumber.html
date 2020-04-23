@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Mobile Number</title>
+        <h1>MOBILE NUMBER</h1>
+
+        <script type="text/javascript">
+        function func1()
+        {
+            // when we have ^ at the start it means that we cant have that at the start 
+            //when we put ^ at the start it means it is th start
+            //$ at the end so it means it is the end of the string
+            var number = document.getElementById("phone").value
+            var regx=/^[0]\d{9}^/
+
+            if(regx.test(number))
+            {
+            document.getElementById("label").innerHTML = "valid"
+            document.getElementById("label").style.visibility ="visible"
+            document.getElementById("label").style.color = "green"
+
+            }
+            else
+            {
+            document.getElementById("label").innerHTML = "invalid"
+            document.getElementById("label").style.visibility ="visible"
+            document.getElementById("label").style.color = "red"
+            }
+
+        }
+
+      
+        
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+
+            <input type="text" name="" id="phone" placeholder="enter your phone number">
+            <br>
+            <br>
+
+            <label id="label" style="color: red;visibility: hidden;">invalid</label>
+            <br>
+            <br>
+            <button onclick="func1()" >Submit</button>
+        </form>
+    </body>
+</html>
