@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Timing Functions</title>
+        <h1>TIMING FUNCTIONS</h1>
+        <script type="text/javascript">
+        function printMsg()
+        {
+            document.getElementById("h2").innerHTML ="5 seconds have passed"
+        }
+
+        var id = 0
+        function start()
+        {
+            //timing is set to 5 seconds 
+            //in this only the fuctin name should type , not the method
+           id= window.setTimeout(printMsg,5000)
+        }
+
+        function stop()
+        {
+            //from this method set timer is canceld
+            alert("stop method is called")
+            window.clearTimeout(id)
+        }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="start()" id="btn1">START</button>
+        <br>
+        <br>
+        <h2 id="h2"> some text </h2>
+        <br>
+        <br>
+        <button onclick="stop()" id="btn2">STOP</button>
+    </body>
+</html>

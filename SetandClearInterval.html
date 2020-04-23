@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Set and Clear Interval</title>
+        <h1>SET AND CLEAR INTERVAL</h1>
+        <script type="text/javascript">
+        
+        var id =0
+        var seconds = 0
+
+
+        function getMsg()
+        {
+            document.getElementById( "h2").innerHTML = seconds+" seconds"
+            seconds++
+        }
+
+        function start()
+        {
+            //this will called in every second 
+            alert("timing has started")
+            id =window.setInterval(getMsg,1000)
+        }
+
+        function stop()
+        {
+            alert("timing has stoped")
+            id =window.clearInterval(id)
+        }
+
+        </script>
+    </head>
+
+    <body>
+
+        <button id="btn1" onclick="start()">START</button>
+        <br>
+        <br>
+        <h2 id="h2">Timer is yet to start</h2>
+        <br>
+        <br>
+        <button id="btn1" onclick="stop()">STOP</button>
+    
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>E-mail verificaion</title>
+        <h1>EMAIL VERIFICATION</h1>
+        <script type="text/javascript">
+        function func1()
+        {
+            var email = document.getElementById("email").value
+
+            var regx =/^([A-Za-z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$/
+
+            if(regx.test(email))
+            {
+                alert("valid email")
+                document.getElementById("label").innerHTML = "valid";
+                document.getElementById("label").style.visibility = "visible";
+                document.getElementById("label").style.color = "green";
+            }
+            else
+            {
+                {
+                alert("invalid email")
+                document.getElementById("label").innerHTML = "invalid";
+                document.getElementById("label").style.visibility = "visible";
+                document.getElementById("label").style.color = "red";
+            }
+
+            }
+
+        }
+        
+        </script>
+    </head>
+
+    <body>
+        <form action="">
+
+            <input type="text" name="email" id="email" placeholder="enter youe email address">
+            <br>
+            <br>
+            <label for="" id ="label" style="color: red;visibility: hidden;">Invalid</label>
+
+            <br>
+            <br>
+            <button onclick="func1()"> CLICK ME</button>
+            <img src="a.jpg" alt="" width="300">
+        </form>
+        
+    </body>
+</html>
