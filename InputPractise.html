@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>NAME AND PASSWORD MATCH</title>
+        <h1>Name and password matching Machine</h1>
+        <script>
+            function func1()
+            {
+                var x = document.getElementById("text1").innerHTML.value
+                var  y= document.getElementById("password").innerHTML.value
+
+                if(x==y)
+             
+                    alert("name and password are same")
+                else
+                
+                    alert("name and password are different")
+                
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <input id="text1" placeholder="enter your name" >
+        <br>
+        <br>
+        <input type="password" id="password" placeholder="enter your password" >
+
+        <br>
+        <br>
+        <br>
+        <button onclick="func1()" >CLICK ME</button>
+
+    </body>
+</html>

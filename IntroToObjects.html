@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Introduction To The Objects</title>
+        <h1>Introduction to the Objects</h1>
+    </head>
+
+    <body>
+        <script type="text/javascript" >
+        function student(name,age,subject)
+        {
+            this.name = name;
+            this.age =age;
+            this.subject = subject;
+            this.eat = function()
+            {
+                document.writeln("students is eating")
+            }
+
+        }
+
+        var s1 = new student("pasindu",24,"IT");
+        var s2 = new student("amal",23,"history");
+        var s3 = new student("roy",18,"english");
+
+        document.write(s1.age)
+        s1.eat()
+        document.write(s1.subject)
+        document.write(s2.subject)
+        document.write(s3.subject)
+
+
+
+        
+
+        </script>
+    </body>
+</html>

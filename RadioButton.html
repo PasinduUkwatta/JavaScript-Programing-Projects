@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>RADIO BUTTON</title>
+        <h1>
+            RADIO BUTTON CLICK
+        </h1>
+
+        <script type="text/javascript" >
+        function func1()
+        {
+            var x =document.getElementById("rd1")
+            var y =document.getElementById("rd2")
+            var z =document.getElementById("rd3")
+            if(x.checked==true)
+            {
+                alert("subject selected is physics")
+            }else if(y.checked==true)
+            
+            {
+                alert("subject selec is chemistry")
+
+            }else if(z.checked==true)
+            {
+                alert("subject select is maths")
+
+            }else
+            {
+                alert("no subject is selected")
+            }
+
+        
+        }
+        
+        </script>
+    </head>
+
+    <body>
+        <input type="radio" name="grp1" id="rd1" value="physics">physics</input>
+        <br>
+        <input type="radio" name="grp1" id="rd2" value="chemistry">chemistry</input>
+        <br>
+        <input type="radio" name="grp1" id="rd3" value="maths">maths</input>
+        <br>
+        <button onclick="func1()">click me</button>
+    </body>
+</html>

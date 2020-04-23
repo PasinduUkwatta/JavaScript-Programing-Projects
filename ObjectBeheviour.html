@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Behaviors of the objects</title>
+        <h1>behavirours of the Objescts</h1>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+
+        function Car(name,model,year)
+        {
+            this.name = name
+            this.model =model
+            this.year = year
+
+            this.drive = function()
+            {
+                document.write("the car is driving")
+                document.write("name of the car is",name)
+                document.write("model of the car is",model)
+                document.write("year of the car is",year)
+
+            }
+
+        }
+
+        var c1 = new Car("toyota","axio",2012)
+        c1.drive()
+        var c2 = new Car("mazda","mod1",2008)
+        c2.drive()
+        var c3 = new Car("tesla","mod3",2017)
+        c3.drive()
+
+//adding fetures to the method after some codinf
+        Car.fuelType = "electric"
+        document.write(Car.fuelType)
+       //deleting fetures in the code --> this will show as undifined
+       delete Car.fuelType
+       document.write(c3.fuelType)
+
+
+
+
+
+        </script>
+    </body>
+</html>

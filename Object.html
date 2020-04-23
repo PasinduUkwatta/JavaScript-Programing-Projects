@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Student Marks</title>
+        <h1>Students Marks Table</h1>
+    </head>
+
+    <body>
+        <script type="text/javascript" >
+        //define the fuction for all the objects
+        function Student(name,subject,mark)
+        {
+            this.name = name
+            this.subject = subject
+            this.mark = mark
+
+            this.infoPrint = function()
+            {
+                document.write("name is  :",name)
+                document.write("subject is  :",subject)
+                document.write("mark is  :",mark)
+
+            }
+
+        }
+
+
+//creating objects
+        var s1 = new Student("pasindu","ict",89)
+        s1.infoPrint()
+        
+        var s2= new Student("amal","english",68)
+        s2.infoPrint()
+        
+        var s3 = new Student("roy","history",78)
+        s3.infoPrint()
+
+        </script>
+    </body>
+</html>

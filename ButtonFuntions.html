@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Button Fuctions</title>
+        <h1>Button Fuctions/clicked</h1>
+        <script>
+            //this function first send a alert and then changed the text
+            function onClicked()
+            {
+                alert("button clicked")
+                document.getElementById("heading2").innerHTML="button clicked and heading two changed"
+            }
+        </script>
+    </head>
+
+    <body>
+        <button onclick="onClicked()">Click Me
+
+        </button>
+        <h2 id="heading2" > HEADING TW0 </h2>
+    </body>
+</html>
