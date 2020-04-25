@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>TOOL TIP WITH J QUERY</title>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+    </head>
+
+    <body>
+        <div id="div1">
+            <h3>Tool Tip</h3>
+
+            <img src="tooltip.png" alt="" width="400px" height="200px" id="img" title="ToolTip">
+        </div>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+    
+    <script src="jqueryui/jquery-ui.js"></script>
+
+
+    
+    <script type="text/javascript">
+    $("#img").tooltip( {
+        track :true,
+        content :"javascript coding",
+        show :{
+            effect :"bounce",duration :2000
+        },
+
+        hide:{
+            effect :"bounce",duration :2000
+        }
+    })
+    </script>
+</html>

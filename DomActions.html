@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>dom actions</title>
+    </head>
+
+    <body>
+        <button id="btn1">SET VALUE</button>
+        <button id="btn2">GET VALUE</button>
+        <p id="p1" class="p1class">this is a paragraph</p>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        //from this method we can change the attribute
+        $("#btn1").click(function (){
+            $("#p1").attr("class","class name chnged")
+        })
+
+        //from this method we can get the method details as alert
+        $("#btn2").click(function (){
+           alert($("#p1").attr("class")) 
+        })
+    })
+    
+    </script>
+    
+</html>

@@ -1,4 +1,14 @@
-#h2{
-    color: chartreuse;
-    font-size: medium;
+.divclass{
+    border: 2px solid blue;
+    margin:5px ;
+    padding: 10px;
+
+
+}
+
+.class2{
+
+    font-size: 25;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }

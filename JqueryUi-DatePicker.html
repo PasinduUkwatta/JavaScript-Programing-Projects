@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Introduction to the j query ui - data picker</title>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+    </head>
+
+    <body>
+        <div id="div1">
+            <h3>introduction to the j query ui</h3>
+            <input type="text" name="" id="date" placeholder="enter the date">
+
+        </div>
+        
+    </body>
+
+    <!--always put the core jqueery file first, the put the jquery ui files,
+    becuse in html read by line by line , 
+    j query ui is built on top of j query
+    so we need to put that first-->
+   
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script src="jqueryui/jquery-ui.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    //this will create automatically date picker and save it in the input
+    $("#date").datepicker({
+
+        numberOfMonths:1,
+        changeYear :true,
+        changeMonth :true,
+        showWeek :true,
+        weekHeader : "Week No :",
+        showOtherMonths : true,
+        minDate : new Date(2010,0,1),
+        mixDate : new Date(2030,11,31)
+
+    })
+    </script>
+
+
+    
+</html>

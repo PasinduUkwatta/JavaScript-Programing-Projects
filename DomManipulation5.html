@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>DOM Manipulations 5 </title>
+    </head>
+
+    <body>
+        <button id="btn1">APPEND</button>
+        <button id="btn2">AFTER</button>
+        <button id="btn3">PREPEND</button>
+        <button id="btn4">BEFORE</button><br><br>
+        <button id="btn5">REMOVE</button>
+        <button id="btn6">EMPTY</button>
+
+        <p id="p1">this is a 1 pragraph</p>
+        <p id="p2">this is a 2 pragraph</p>
+        <p id="p3">this is a 3 pragraph</p>
+        <p id="p4">this is a 4 pragraph</p>
+        <p id="p5">this is a 5 pragraph</p>
+        <p id="p6">this is a 6 pragraph</p>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+        //from this function more sentece is added to the end of the sentence
+        $("#btn1").click(function (){
+            $("#p1").append("this is appended paragraph")
+        })
+
+        //this will add to the end
+        $("#btn2").click(function (){
+            $("#p2").after("this is after paragraph")
+        })
+
+        //this will add to the head of the element selected
+        $("#btn3").click(function (){
+            $("#p3").prepend("this is prepend paragraph")
+        })
+
+        //this will added to the selected sentence
+        $("#btn4").click(function (){
+            $("#p4").before("this is before paragraph")
+        })
+
+        //this will remove the selected element
+        $("#btn5").click(function (){
+           
+            alert("paragraph 5 is removed")
+            $("#p5").remove()
+
+            
+            
+        })
+
+        //this will empty the selected element
+        $("#btn6").click(function (){
+           
+            alert("paragrph 6 is missig")
+            $("#p6").empty()
+
+            
+           
+        })
+    })
+    
+    
+
+    </script>
+
+    
+</html>

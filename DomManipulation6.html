@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Dom manipulations</title>
+    </head>
+
+    <body>
+        <link rel="stylesheet" href="style.css">
+        <div id="div1" class="divclass">
+
+            <button id="btn1">ADD</button>
+            <button id="btn2">REMOVE</button>
+            <button id="btn3">TOGGLE</button>
+            <button id="btn4">CSS</button>
+            <p id="p1">this is paraghaph 1</p><br>
+            <p id="p2">this is paraghaph 2</p><br>
+            <p id="p3">this is paraghaph 3</p><br>
+            <p id="p4">this is paraghaph 4</p><br>
+
+        </div>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#div1").addClass("class2")
+        })
+
+        $("#btn2").click(function(){
+            $("#div1").removeClass("class2")
+        })
+
+        $("#btn3").click(function(){
+            $("#div1").toggleClass("class2")
+        })
+
+        $("#btn4").click(function(){
+          alert($("#div1").css("font-family"))  
+        })
+    })
+    </script>
+
+</html>

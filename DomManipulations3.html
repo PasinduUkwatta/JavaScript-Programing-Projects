@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Dom manipulatios -html method</title>
+    </head>
+
+    <body>
+        <p id="p1">this is a <b>paragrpah</b></p>
+        <button id="btn1">Action</button>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            //in this we are using the html method
+            //so due to html method we can see the html tags inside the text
+           alert( $("#p1").html())
+        })
+    })
+    </script>
+</html>
