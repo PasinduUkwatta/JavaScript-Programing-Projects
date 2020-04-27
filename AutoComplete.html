@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Auto Complete</title>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+    </head>
+
+    <body>
+        <h3>Example</h3>
+        <div id="div1" style="border:2px; padding: 5px; color: chartreuse; border-color: chocolate;">
+            <label for="">Enter your City</label>
+            <input type="text" name="" id="citybox">
+        </div>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+    <script src="jqueryui/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    
+    //we should provide the suggestions in the array to check
+    var cities = [
+        "Colombo ",
+        "Dehiwala",
+	    "Moratuwa ",
+	    "Jaffna",  
+	   " Negombo ",
+       " Pita Kotte",	
+        "Sri Jayewardenepura Kotte" , 
+	  "  Trincomalee ",
+	   " Kalmunai", 
+	    "Galle  ",
+        "Point Pedro " 
+    ]
+    
+    $("#citybox").autocomplete({
+        source :cities
+    },{
+        autoFocus :true,
+        delay :0,
+        minLength :3
+    })
+    </script>
+</html>

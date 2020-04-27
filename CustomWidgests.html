@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>CUSTOM WIDGETS</title>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+    </head>
+
+    <body>
+        <div id="div1">
+            <label for="">Add the date</label><br>
+            <input type="text" id="date">
+
+            <button id="btn1">Click Me</button>
+        </div>
+
+        <div id="div2">
+            <h3>javascript</h3>
+            <p>javascfript has many fucntionds</p>
+
+            <h3>java</h3>
+            <p>java supports oops fucntionds</p>    
+
+            <h3>python</h3>
+            <p>python has many libarires</p>
+        </div>
+
+        <div id="div3">
+            <img src="message.png" id="img" alt="" height="200" width="200">
+            <button id="btn2">Click me</button>
+        </div>
+        
+
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script src="jqueryui/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+    
+        $("#btn1").click(function(){
+            $("#date").datepicker({
+                changeYear : true,
+                changeMonth : true,
+            })
+        })
+
+        $("#div2").accordion()
+        $("#btn1").click(function(){
+            $("#div3").dialog({
+                height : 200,
+                width :200
+            })
+        })
+
+        $("#btn1").click(function (){
+            //getter method
+            var height = $("div3").dialog("option",height)
+            alert(height)
+
+            //setter method 
+            //use official doucmnteion of the jquery
+            $("#div3").dialog("option","height",600)
+        })
+       
+    })
+
+    </script>
+</html>

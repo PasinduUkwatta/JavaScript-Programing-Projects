@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Themes in HTML</title>
+        <h1>THEAMS</h1>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+    </head>
+
+    <body>
+        <div id="div1">
+            <button id="btn1"> click me</button>
+        </div>
+
+        <div id="div2">
+            <h3>javascript</h3>
+            <p>javascript is good for frontend</p>
+
+            <h3>java</h3>
+            <p>java is good oops </p>
+
+            <h3>python</h3>
+            <p>python is good for calculations</p>
+        </div>
+
+        <div id="div3">
+            <h3>this is dummy image</h3>
+            <img src="message.png" alt="" width="150" height="150">
+            
+        </div>
+        
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script src="jqueryui/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#div1").datepicker()
+        })
+
+        $("#div2").accordion()
+
+        $("btn1").click(function(){
+            $("#div3").dialog()
+        })
+    
+    }
+    )
+    
+    </script>
+
+</html>

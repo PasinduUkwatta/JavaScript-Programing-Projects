@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Massage box</title>
+        <h1>MASSAGE BOX IN J QUERY</h1>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+
+    </head>
+
+    <body>
+        <h2>Example</h2>
+
+        <div id="div1">
+            <h3>Welcome</h3>
+            <button id="btn1"> click to show massage</button>
+
+        </div>
+        <br>
+        <br>
+        <div id="div2">
+            
+            <h3>BUTTON CLICKED</h3>
+            <img src="message.png" alt="" height="200" width="200">
+            <br><br>
+            <button>click me</button>
+
+        </div>
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script src="jqueryui/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $("#btn1").click(function(){
+        //FROM THIS FUNCTION WE PUT THE IMAGE AS A MESSAGE BOX
+        $("#div2").dialog({
+            title :"custom message box",
+            draggable :true,
+            resizable : true,
+            height :300,
+            width:300
+
+
+        })
+    })
+    
+    </script>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>DRAGABLE FEATURE</title>
+        <h1>Daraggabke Feature</h1>
+        <link rel="stylesheet" href="jqueryui/jquery-ui.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
+        <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
+    </head>
+
+    <body>
+
+        <h3>Draggable cubes</h3>
+        <div>
+            <div style="height: 100; width: 100; color: brown; margin: 20px ;padding: 0.5em; background-color:chartreuse " class="cube">
+                <h4>CUBE1</h4>
+            </div>
+
+            <div style="height: 100; width: 100; color:aqua ; margin: 20px ;padding: 0.5em; background-color: darkmagenta" class = "cube">
+                <h4>CUBE2</h4>
+            </div>
+        </div>
+        
+    </body>
+
+    <script 
+    src="https://code.jquery.com/jquery-3.5.0.js" 
+    integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" 
+    crossorigin="anonymous">
+    </script>
+
+    <script src="jqueryui/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+    $(".cube").draggable({
+        cursor :"grabbing",
+        containment :"parent"
+    })
+    </script>
+</html>
