@@ -1,0 +1,39 @@
+const dolphinScore = 96 + 108 + 89
+const kolasScore = 88 + 91 + 110
+
+
+const avarageDolphin = dolphinScore / 3
+const avarageKolas = kolasScore / 3
+
+if (avarageDolphin > avarageKolas) {
+    console.log("Dolphin Winners")
+}
+else if (avarageDolphin < avarageKolas) {
+    console.log("Kolas Winner")
+}
+else if (avarageKolas === avarageDolphin) {
+    console.log("Draw")
+}
+
+const ds1 = 97
+const ds2 = 112
+const ds3 = 101
+const ks1 = 109
+const ks2 = 95
+const ks3 = 106
+
+const avarageDolphin1 = (ds1 + ds2 + ds3) / 3
+const avarageKolas1 = (ks1 + ks2 + ks3) / 3
+
+if ((avarageDolphin1 > avarageKolas1) && ((ds1 > 100 || ds2 > 100 || ds3 > 100))) {
+    console.log("dolphine win with max 100")
+}
+
+
+else if ((avarageDolphin1 < avarageKolas1) && ((ks1 > 100 || ks2 > 100 || ks3 > 100))) {
+    console.log("kolas win with max 100")
+}
+
+else if ((avarageDolphin1 === avarageKolas1) && ((ds1 > 100 || ds2 > 100 || ds > 100 || ks1 > 100 || ks2 > 100 || ks3 > 100))) {
+    console.log("drwa the match but max score is 100")
+}
