@@ -1,0 +1,19 @@
+const billValue = 430
+let tip
+(50 >= billValue) || (billValue >= 300) ? tip = billValue * 0.2 : tip = billValue * 0.15
+{
+    console.log(tip)
+    console.log(`the bill was  ${billValue}  ,the tip was  ${tip} ,and the total value is  ${billValue + tip}`)
+}
+
+
+const age = 2
+
+age >= 18 ? console.log("im older than 18 years😎") : console.log("im younger than 18 years😥")
+
+age >= 18 ? console.log("wine🥂") : console.log("water 🥛")
+
+//ternory oprators allowed inside the backticks
+console.log(`i can  drink ${age >= 18 ? "wine" : "water"}`)
+
+
