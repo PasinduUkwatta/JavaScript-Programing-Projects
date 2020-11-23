@@ -1,0 +1,21 @@
+const markWeight = 95
+const markheight = 1.88
+
+const johnWeight = 85
+const johnHeight = 1.76
+
+BMIMark = markWeight / (markheight * markheight)
+BMIJohn = johnWeight / (johnHeight * johnHeight)
+
+console.log(BMIMark)
+console.log(BMIJohn)
+
+if (BMIJohn > BMIMark) {
+    console.log("John BMI is Grater")
+    console.log(`Jhon BMI is ${BMIJohn} which is grator than Mark BMI ${BMIMark}`)
+}
+else {
+    console.log("Mark BMI is grator")
+    console.log(`Jhon BMI is ${BMIJohn} which is lower than Mark BMI ${BMIMark}`)
+
+}
