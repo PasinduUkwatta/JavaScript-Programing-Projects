@@ -1,0 +1,33 @@
+function fruitProcessor(apples, oranges) {
+    console.log(apples, oranges)
+    const juice = `juice with ${apples} apples and ${oranges} oranges`
+    return juice
+}
+
+const appleJuice = fruitProcessor(5, 0)
+const orangeJuice = fruitProcessor(0, 3)
+const mixJuice = fruitProcessor(3, 2)
+
+console.log(appleJuice)
+console.log(orangeJuice)
+console.log(mixJuice)
+
+const num = Number("23")
+
+console.log(num)
+console.log(typeof (num))
+
+
+function calcAge1(birthYear) {
+    return 2020 - birthYear
+}
+
+const age1 = calcAge1(1996)
+
+const calcAge2 = function (birthYear) {
+    return 2020 - birthYear
+}
+
+const age2 = calcAge2(1996)
+
+console.log(age1, age2)
