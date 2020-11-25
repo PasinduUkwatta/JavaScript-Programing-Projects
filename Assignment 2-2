@@ -1,0 +1,66 @@
+const friends = ["michel", "jane", "philip", "mark"]
+
+friends.push("pasindu")
+
+console.log(friends)
+
+
+const newLength = friends.push("thiwanka")
+
+console.log(friends)
+console.log(newLength)
+
+friends.unshift("John")
+
+console.log(friends)
+
+const popped = friends.pop()
+
+console.log(friends)
+console.log(popped)
+
+friends.pop()
+
+console.log(friends)
+
+friends.shift()
+
+console.log(friends)
+
+console.log(friends.indexOf("jane"))
+console.log(friends.indexOf("mark"))
+console.log(friends.indexOf("bob"))
+
+console.log(friends.includes("cena"))
+console.log(friends.includes("jane"))
+
+if (friends.includes("jane")) {
+    console.log("you have a friend")
+} else {
+    console.log("you does not have friend")
+}
+
+function calcTip(billValue) {
+    if (50 <= billValue <= 300) {
+        return billValue * 0.15
+
+    }
+    else {
+        return billValue * 0.2
+    }
+}
+
+
+console.log(calcTip(100))
+
+const bills = [125, 555, 44]
+
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+
+console.log(tips)
+
+
+const total = [bills[0] + calcTip(bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])]
+
+console.log(total)
+
