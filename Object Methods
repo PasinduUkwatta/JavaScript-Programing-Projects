@@ -1,0 +1,37 @@
+const pasindu = {
+    "firstName": "pasindu",
+    "lastName": "thiwanka",
+    "birthYear": 1996,
+    "job": "student",
+    "friends": ["michel", "jane", "philip", "mark"],
+    "hasDriverLisence": true,
+
+    information: function () {
+        return (`${this.firstName} is ${(2020 - this.birthYear)} years old .He is a ${this.job}.He have ${this.friends.length} friends`)
+    },
+
+    // calcAge: function (birthYear) {
+    //     return 2020 - birthYear
+    // }
+
+    // calcAge: function () {
+    //     return 2020 - this.birthYear
+    // }
+
+    calcAge: function () {
+        this.age = 2020 - this.birthYear
+        return this.age
+    }
+
+}
+
+console.log(pasindu.calcAge())
+// console.log(pasindu["calcAge"](1996))
+
+
+console.log(`${pasindu.firstName} is ${pasindu.age} years old .He is a ${pasindu.job}.He have ${pasindu.friends.length} friends`)
+
+
+const details = pasindu.information()
+
+console.log(details)
