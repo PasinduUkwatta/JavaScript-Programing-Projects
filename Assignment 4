@@ -1,0 +1,39 @@
+const x = 23;
+
+if (x == 23) {
+  console.log("Hello world");
+}
+
+console.log(x + 10);
+console.log(x + 10);
+console.log(x + 10);
+console.log(x + 10);
+console.log(x + 100);
+
+const temptatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+
+const newTemp = [];
+
+for (let i = 0; i <= temptatures.length - 1; i++) {
+  if (temptatures[i] !== "error") {
+    console.log(temptatures[i]);
+    newTemp.push(temptatures[i]);
+  }
+}
+
+console.log(newTemp);
+
+const maxTemp = Math.max(...newTemp);
+const minTemp = Math.min(...newTemp);
+
+console.log(maxTemp);
+console.log(minTemp);
+console.log(`Teamprature  Amplitutde is ${maxTemp - minTemp}`);
+
+let tempAmp = [];
+
+for (let i = 0; i <= newTemp.length - 1; i++) {
+  tempAmp.push(maxTemp - newTemp[i]);
+}
+
+console.log(tempAmp);
