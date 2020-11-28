@@ -1,0 +1,17 @@
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+const sentence = ["..."];
+
+function printForecast(arr) {
+  for (let i = 0; i <= arr.length - 1; i++) {
+    sentence.push(`${arr[i]} in ${i + 1} days...`);
+  }
+}
+
+//printForecast(data1);
+printForecast(data2);
+console.log(sentence.toString());
+console.log(sentence.join(""));
+
+var testarray = new Array("a", "b", "c");
+console.log(testarray.join(""));
