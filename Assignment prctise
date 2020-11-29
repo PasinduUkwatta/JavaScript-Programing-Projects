@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning HTML and CSS</title
+    </head>
+  <body>
+
+    <h1>JavaScript is fun ,but so HTML & CSS</h1>
+    <p class="first">
+      you can learn js without html and css but for dom manipulation its useful
+      to have some basic idea about html and css Lorem ipsum dolor, sit amet
+      consectetur adipisicing elit. Quo explicabo exercitationem quibusdam
+      commodi, veritatis vel quod! Quos eligendi officia quibusdam blanditiis?
+      Nam ab dolore tempore soluta pariatur neque saepe ipsam.
+     <br>
+     <br>
+     Follow me on Linked in : <a href="https://www.linkedin.com/in/pasindu-ukwatta/">pasindu ukwatta</a>
+    </p>
+    <img id='linked-in' src="#">
+    <p class="second">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur perferendis itaque optio in omnis amet possimus asperiores culpa distinctio repudiandae id illum fugiat veritatis quam, harum officia esse ipsa eveniet!
+    </p>
+    <h2>Another heading</h2>
+
+    <form id="your-name">
+        <h2>Your name here</h2>
+        <p class="first">Please fill this form </p>
+
+        <label>User Name :</label><input type="text" placeholder="Enter Your name here">
+
+        <button>Ok</button>
+    </form>
+
+  </body>
+</html>
