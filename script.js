@@ -1,69 +1,54 @@
-// Remember, we're gonna use strict mode in all scripts now!
-"use strict";
-
+'use strict';
 /*
-const x = 23;
+console.log(document.querySelector('.message').textContent);
 
-if (x == 23) {
-  console.log("Hello world");
-}
+document.querySelector('.message').textContent = '🎉Correct Number';
 
-console.log(x + 10);
-console.log(x + 10);
-console.log(x + 10);
-console.log(x + 10);
-console.log(x + 100);
+console.log(document.querySelector('.message').textContent);
 
-const temptatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
+document.querySelector('.number').textContent = 13;
+document.querySelector('.score').textContent = 20;
 
-const newTemp = [];
+document.querySelector('.guess').value = 23;
+console.log(document.querySelector('.guess').value);
 
-for (let i = 0; i <= temptatures.length - 1; i++) {
-  if (temptatures[i] !== "error") {
-    console.log(temptatures[i]);
-    newTemp.push(temptatures[i]);
-  }
-}
-
-console.log(newTemp);
-
-const maxTemp = Math.max(...newTemp);
-const minTemp = Math.min(...newTemp);
-
-console.log(maxTemp);
-console.log(minTemp);
-console.log(`Teamprature  Amplitutde is ${maxTemp - minTemp}`);
-
-let tempAmp = [];
-
-for (let i = 0; i <= newTemp.length - 1; i++) {
-  tempAmp.push(maxTemp - newTemp[i]);
-}
-
-console.log(tempAmp);
 */
 
-/*
-console.log("pasindu");
-console.warn("pasindu");
-console.error("pasindu");
-console.table("pasindu");
-*/
+const secretNumber = Math.trunc(Math.random() * 20 + 1);
 
-const data1 = [17, 21, 23];
-const data2 = [12, 5, -5, 0, 4];
-const sentence = ["..."];
+let score = 20;
 
-function printForecast(arr) {
-  for (let i = 0; i <= arr.length - 1; i++) {
-    sentence.push(`${arr[i]} in ${i + 1} days...`);
+document.querySelector('.number').textContent = secretNumber;
+console.log(secretNumber);
+
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+  console.log(guess);
+  console.log(typeof guess);
+
+  if (!guess) {
+    document.querySelector('.message').textContent = '😑 No Number 😅';
+  } else if (guess === secretNumber) {
+    document.querySelector('.message').textContent = '🎉Correct Number🎊';
+    document.querySelector('.score').textContent = score;
+  } else if (guess > secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '😯too high🥱';
+      score = score - 1;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '😥You lost the game😫';
+      document.querySelector('.score').textContent = 0;
+    }
+    document.querySelector('.score').textContent = score;
+  } else if (guess < secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '😅too low😏';
+      score = score - 1;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '😥You lost the game😫';
+      document.querySelector('.score').textContent = 0;
+    }
   }
-}
-
-//printForecast(data1);
-printForecast(data2);
-console.log(sentence.toString());
-console.log(sentence.join(""));
-
-var testarray = new Array("a", "b", "c");
-console.log(testarray.join(""));
+});
