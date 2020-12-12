@@ -1,105 +1,33 @@
 'use strict';
-/*
-console.log(document.querySelector('.message').textContent);
 
-document.querySelector('.message').textContent = '🎉Correct Number';
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
 
-console.log(document.querySelector('.message').textContent);
+console.log(btnsOpenModal);
 
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 20;
-
-document.querySelector('.guess').value = 23;
-console.log(document.querySelector('.guess').value);
-
-*/
-
-let secretNumberGenerator = function () {
-  return Math.trunc(Math.random() * 20 + 1);
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 };
 
-let secretNumber = secretNumberGenerator();
+for (let i = 0; i <= btnsOpenModal.length - 1; i++) {
+  btnsOpenModal[i].addEventListener('click', openModal);
+}
 
-let score = 20;
-let highScore = 0;
-
-const displayMessage = function (message) {
-  document.querySelector('.message').textContent = message;
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
 };
 
-console.log(secretNumber);
+btnCloseModal.addEventListener('click', closeModal);
 
-document.querySelector('.check').addEventListener('click', function () {
-  let guess = Number(document.querySelector('.guess').value);
-  console.log(guess);
-  console.log(typeof guess);
+overlay.addEventListener('click', closeModal);
 
-  //No Number
-  if (!guess) {
-    // document.querySelector('.message').textContent = '😑 No Number 😅';
-    displayMessage('😑 No Number 😅');
+document.addEventListener('keydown', function (e) {
+  console.log(e.key);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
   }
-
-  //Player wins
-  else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = '🎉Correct Number🎊';
-    document.querySelector('.number').textContent = secretNumber;
-
-    document.querySelector('.score').textContent = score;
-    document.querySelector('body').style.backgroundColor = '#60b347';
-
-    document.querySelector('.number').style.width = '30rem';
-    if (score > highScore) {
-      highScore = score;
-      document.querySelector('.highscore').textContent = highScore;
-    }
-  } else if (guess !== secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent =
-        guess < secretNumber ? '😅too low😏' : '😯too high🥱';
-      score = score - 1;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '😥You lost the game😫';
-      document.querySelector('.score').textContent = 0;
-    }
-  }
-});
-
-//Player Guess the bIG nUmber
-// else if (guess > secretNumber) {
-//   if (score > 1) {
-//     document.querySelector('.message').textContent = '😯too high🥱';
-//     score = score - 1;
-//     document.querySelector('.score').textContent = score;
-//   } else {
-//     document.querySelector('.message').textContent = '😥You lost the game😫';
-//     document.querySelector('.score').textContent = 0;
-//   }
-//   document.querySelector('.score').textContent = score;
-// }
-
-//player Guess Small Number
-// else if (guess < secretNumber) {
-//   if (score > 1) {
-//     document.querySelector('.message').textContent = '😅too low😏';
-//     score = score - 1;
-//     document.querySelector('.score').textContent = score;
-//   } else {
-//     document.querySelector('.message').textContent = '😥You lost the game😫';
-//     document.querySelector('.score').textContent = 0;
-//   }
-// }
-
-document.querySelector('.again').addEventListener('click', function () {
-  document.querySelector('.message').textContent = 'Start Guessing';
-  score = 20;
-  document.querySelector('.score').textContent = 20;
-
-  document.querySelector('.number').textContent = '?';
-  document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('.number').style.width = '15rem';
-  let guess = Number((document.querySelector('.guess').value = ''));
-
-  secretNumber = secretNumberGenerator();
 });
