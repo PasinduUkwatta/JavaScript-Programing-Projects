@@ -1,0 +1,23 @@
+function boo(n) {
+  for (let i = 0; i < n.length; i++) {
+    console.log(`Boo ${i}`);
+  }
+}
+
+boo([1, 3, 41, 43, 3, 15, 45]); //space complexity -->o(1)
+
+function arrayOfTimes(n) {
+  let hiArray = [];
+  for (let i = 0; i < n; i++) {
+    hiArray[i] = "hi";
+  }
+
+  return hiArray;
+}
+
+console.log(arrayOfTimes(5)); //o(n)
+
+const array = ["hi", "my", "today"];
+
+array[0]; //o(1)
+array[array.length - 1]; //o(1)
