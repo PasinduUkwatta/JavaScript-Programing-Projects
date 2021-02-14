@@ -1,0 +1,62 @@
+const arr = [7, 8, 9];
+
+const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
+
+console.log(badNewArray);
+
+const newArray = [1, 2, ...arr];
+
+console.log(newArray);
+
+// we can use this when we need the data individual
+console.log(...newArray);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci', 'sushi'];
+
+console.log(newMenu);
+
+//copy array
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+console.log(mainMenuCopy);
+
+//join arrys
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+console.log(menu);
+
+//iterables  :arrys ,strings,maps, Not objects
+
+const str = 'pasindu';
+
+const letters = [...str, '', 's'];
+console.log(letters);
+
+console.log(...str);
+
+function orderPasta(ing1, ing2, ing3) {
+  console.log(`THIS IS YOUR PASTA WITH ${ing1} ,${ing2},${ing3}`);
+}
+
+// const ingerdients = [
+//   prompt("Let 's make pasta ! ingeridients 1?"),
+//   prompt("Let 's make pasta ! ingeridients 2?"),
+//   prompt("Let 's make pasta ! ingeridients 3?"),
+// ];
+
+// console.log(ingerdients);
+// //calling the fucntion with the spred operator
+// orderPasta(...ingerdients);
+
+const newResturant = { ...restaurant, founder: 'pasindu ', founderYear: 1996 };
+
+console.log(newResturant);
+
+const resturantCopy = { ...restaurant };
+
+resturantCopy.name = 'returnata roma';
+
+console.log(restaurant.name);
+console.log(resturantCopy.name);
