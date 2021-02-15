@@ -1,0 +1,81 @@
+//spread beacuse of the right side of the array
+const arr1 = [1, 2, ...[3, 4]];
+//rest, beacuse on the left side
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risato, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risato, otherFood);
+
+//objects
+
+const { sat, ...weekdays } = restaurant.openingHours;
+
+console.log(weekdays);
+
+const add = function (...numbers) {
+  let sum = 0;
+
+  console.log(numbers);
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+
+  console.log(sum);
+};
+
+add(2, 3);
+
+add(5, 3, 7, 2);
+
+add(5, 3, 6, 5, 7, 5, 6, 2, 2, 2);
+
+const x = [23, 5, 7];
+add(...x);
+
+function orderPizza(mainIngredients, ...others) {
+  console.log(mainIngredients);
+  console.log(others);
+}
+
+orderPizza('Mashroom', 'chicken', 'tomatoes');
+
+//use any data type,return any datatype
+//short-curcuit
+console.log(3 || 'jonas');
+console.log('' || 'jonas');
+console.log(true || 0);
+
+//any opertains on null return null
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'hello' || '23' || null);
+
+restaurant.numGuests = 23;
+
+//if the guest no =0 , this will not work
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+
+console.log(guests1);
+
+const gusets2 = restaurant.numGuests || 10;
+
+console.log(gusets2);
+
+console.log('----------------AND------------------');
+
+console.log(0 && 'jon');
+
+//and opertor retrun the final value
+console.log(1 && '10');
+
+console.log('hello' && 23 && null && 'jhn' && 12);
+
+if (orderPizza) {
+  orderPizza('mushroom', 'spinich');
+}
+
+orderPizza && orderPizza('chicken', 'cheese', 'butter');
