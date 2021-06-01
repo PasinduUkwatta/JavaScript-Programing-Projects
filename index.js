@@ -1,6 +1,6 @@
-import {combineReducers} from 'redux'
-import authReducer from "./authReducer";
+import React from "react";
+import ReactDOM from 'react-dom'
+import App from "./components/App";
 
-export default combineReducers({
-   auth :authReducer
-})
+
+ReactDOM.render(<App/>,document.querySelector("#root"))
