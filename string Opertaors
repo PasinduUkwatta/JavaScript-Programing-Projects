@@ -1,0 +1,124 @@
+const airLine = 'Tap Air Sri Lanka';
+
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log('B737'[0]);
+console.log(airLine.length);
+console.log(airLine.indexOf('r'));
+
+console.log(airLine.indexOf('Air'));
+
+console.log(airLine.slice(4));
+console.log(airLine.slice(4, 7));
+
+console.log(airLine.slice(0, airLine.indexOf(' ')));
+console.log(airLine.slice(airLine.lastIndexOf(' ') + 1));
+
+console.log(airLine.slice(-2));
+console.log(airLine.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  //B AND E ARE MIDDLE SEATS
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got Middle Seat');
+  } else {
+    console.log('You got Another Seat');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Pasindu'));
+
+console.log(airLine.toLowerCase());
+console.log(airLine.toUpperCase());
+
+//Fix Capitaliation in Passanger Name
+
+const passnager = 'pasINDu';
+
+const passnagerLower = passnager.toLocaleLowerCase();
+
+console.log(passnagerLower.toUpperCase()[0] + passnagerLower.slice(1));
+
+//comparing emails
+const email = 'pasindu@gmail.com';
+const loginEmail = 'PASINDU@gmail.com \n';
+const trimedEmail = loginEmail.trim();
+
+console.log(trimedEmail);
+
+if (email === trimedEmail.toLocaleLowerCase()) {
+  console.log('true');
+} else {
+  console.log('false');
+}
+
+//replacing
+
+const priceGB = '10235@';
+
+const priceUSD = priceGB.replace('@', '$');
+
+console.log(priceUSD);
+
+const Announcment = 'All Students come to door near to the class door';
+
+console.log(Announcment.replaceAll('door', 'window'));
+
+const Plane = 'Air Bus Plane';
+
+console.log(Plane.includes('Bus'));
+console.log(Plane.startsWith('Air'));
+
+//---------------------------------------------------------
+
+console.log('a+vey+nice+string'.split('+'));
+
+console.log('pasindu thiwanka'.split(' '));
+
+const [firstName, lastName] = 'Pasindu thiwnaka'.split(' ');
+
+console.log(firstName);
+console.log(lastName);
+
+//padding a string
+
+const message = 'go to gate 23';
+
+console.log(message.padStart(25, '-').padEnd(35, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(24626474));
+
+console.log(maskCreditCard('1485723067207204546'));
+
+const message2 = 'Bad Weather ...All departures Delayed...';
+
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`there are ${n} planes in line ${'🃏'}`);
+};
+
+planesInLine(4);
+
+function convertInToCamel(name) {
+  const splitName = name.split('_');
+  const upperName = splitName[0].toUpperCase();
+  console.log(upperName);
+}
+
+console.log(convertInToCamel('pasindu_thiwanka_deshan'));
