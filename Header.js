@@ -1,24 +1,22 @@
-import React from "react"
-import {Link} from "react-router-dom";
+import React from 'react'
+import {Link} from 'react-router-dom'
 import GoogleAuth from "./GoogleAuth";
 
-
-const Header =()=>{
-    return(
-        <div className="ui secondary pointing menu">
-            <Link to="/" className ="item">
-                Streamy
+const Header = ()=>{
+    return (
+        <div className ='ui secondary pointing menu'>
+            <Link to='/' className ='item'>
+                Streamer
             </Link>
-            <div className="right menu">
-                <Link to="/" className ="item">
+            <div className ='right menu'>
+                <Link to='/' className ='item'>
                     All Streams
                 </Link>
-                <GoogleAuth/>
+                <GoogleAuth />
 
             </div>
 
-        </div>
-    )
+        </div>)
 }
 
 export default Header
