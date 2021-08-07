@@ -54,3 +54,23 @@ var fightRobotArmy = function (robots) {
 var fightRobotArmy2 = function (robots) {
     console.log("fight");
 };
+var dog = {};
+dog.count;
+//function
+var fightRobotArmy3 = function (robots) {
+    console.log("Fight");
+};
+//class
+var Animal = /** @class */ (function () {
+    function Animal(sound) {
+        this.sing = sound;
+    }
+    Animal.prototype.greet = function () {
+        return "Hello " + this.sing;
+    };
+    return Animal;
+}());
+var lion = new Animal('Roar');
+lion.sing;
+//union
+var confused = true;

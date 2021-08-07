@@ -80,7 +80,7 @@ let error =() :never=>{
 interface RobotArmy {
     count :number,
     type:string,
-    magic:string
+    magic?:string
 }
 
 let fightRobotArmy =(robots:RobotArmy)=>{
@@ -90,3 +90,42 @@ let fightRobotArmy =(robots:RobotArmy)=>{
 let fightRobotArmy2 =(robots: { count:number, type:string,magic:string})=>{
     console.log("fight")
 }
+
+//Type assetrion
+interface CatArmy {
+    count :number,
+    type:string,
+    magic:string
+}
+
+let dog ={} as CatArmy
+
+dog.count
+
+
+
+//function
+let fightRobotArmy3 =(robots:{count:number,type:string,magic:string}) :void=>{
+    console.log("Fight")
+}
+
+
+//class
+class Animal{
+    sing:string;
+    constructor(sound:string) {
+        this.sing=sound;
+    }
+
+    greet(){
+        return `Hello ${this.sing}`
+    }
+}
+
+let lion =new Animal('Roar')
+
+lion.sing
+
+//union
+let confused :string | number |boolean =true
+
