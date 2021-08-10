@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import Image from "../components/image";
 const About =()=>{
     return(
         <div style={{fontsize:"20px",color:"blue"}}>
@@ -9,6 +9,7 @@ const About =()=>{
                 <Link href ="./"><a>Back to homepage</a></Link>
 
             </button>
+            <Image/>
         </div>
     )
 }

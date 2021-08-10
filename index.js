@@ -10,6 +10,11 @@ const Index =() =>(
 
         </button>
 
+        <button>
+            <Link href ="./robots"><a>Robots</a></Link>
+
+        </button>
+
         {/*<a href="./about">About</a>*/}
     </div>
 )
