@@ -1,22 +1,20 @@
-import Link from "next/link";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Provider} from 'react-redux'
+import { createStore ,applyMiddleware,compose} from  'redux'
 
 
+import reducers from "./reducers"
+import App from './components/App'
 
-const Index =() =>(
-    <div>
-        <h1>SSR Magician</h1>
-        <button>
-            <Link href ="./about"><a>About</a></Link>
+const composeEnhancers =window.__REDUX_DEVTOOLS_EXTENTION_COMPOSE__||compose
+const store = createStore(
+    reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
-        </button>
-
-        <button>
-            <Link href ="./robots"><a>Robots</a></Link>
-
-        </button>
-
-        {/*<a href="./about">About</a>*/}
-    </div>
 )
 
-export default Index
+ReactDOM.render(
+    <Provider store ={store}>
+        <App />
+    </Provider>,
+    document.querySelector('#root'))
