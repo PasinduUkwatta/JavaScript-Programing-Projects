@@ -1,29 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import Hero from "./Hero";
-// import ErrorBoundry from "./ErrorBoundry";
-// import Graph from "./Graph/graph";
+import React from 'react'
+import {BrowserRouter,Route} from 'react-router-dom'
+import StreamCreate from "./streams/StreamCreate";
+import StreamDelete from "./streams/StreamDelete";
+import StreamEdit from "./streams/StreamEdit";
+import StreamList from "./streams/StreamList";
+import StreamShow from "./streams/StreamShow";
+import Header from "./Header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Pasindu Thiwanka</p>
-        <p>Deshan Ukwatta</p>
-        <p>😎😋😁</p>
+const App =()=>{
+    return (
+        <div className='ui container'>
 
-        {/*<ErrorBoundry>*/}
-        {/*  <Hero heroname="batman"></Hero>*/}
-        {/*  <Hero heroname="superman"></Hero>*/}
-        {/*  <Hero heroname="Joker"></Hero>*/}
-        {/*</ErrorBoundry>*/}
+            <BrowserRouter>
+                <div>
+                    <h1><Header/></h1>
+                    <Route exact path='/' component={StreamList}/>
+                    <Route exact path='/streams/new' component={StreamCreate}/>
+                    <Route exact path='/streams/edit' component={StreamEdit}/>
+                    <Route exact path='/streams/delete' component={StreamDelete}/>
+                    <Route exact path='/streams/show' component={StreamShow}/>
 
+                </div>
 
+            </BrowserRouter>
 
-      </header>
-    </div>
-  );
+        </div>
+    )
 }
 
-export default App;
+export default App
