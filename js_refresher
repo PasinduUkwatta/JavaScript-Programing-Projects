@@ -1,0 +1,37 @@
+// const mutiply = num => num * num;
+
+// console.log(mutiply(4));
+
+// class Human {
+//   gender = 'male';
+
+//   printGender = () => {
+//     console.log(this.gender);
+//   };
+// }
+
+// class Person extends Human {
+//   name = 'pasindu';
+//   gender = 'female';
+
+//   printMyName = () => {
+//     console.log(this.name);
+//   };
+// }
+
+// const person = new Person();
+
+// person.printMyName();
+// person.printGender();
+//----------------------------------------------
+
+// const person ={
+//     name ="pasindu"
+// }
+
+// const newPerson ={
+//     ...person,
+//     age :25
+// }
+
+// console.log(newPerson);
