@@ -1,31 +1,24 @@
-import React from 'react'
-import {BrowserRouter,Route} from 'react-router-dom'
-import StreamCreate from "./streams/StreamCreate";
-import StreamDelete from "./streams/StreamDelete";
-import StreamEdit from "./streams/StreamEdit";
-import StreamList from "./streams/StreamList";
-import StreamShow from "./streams/StreamShow";
-import Header from "./Header";
+import React,{useState} from 'react';
+import AddUser from "./components/Users/AddUser";
+import UsersList from "./components/Users/UsersList";
 
-const App =()=>{
-    return (
-        <div className='ui container'>
+function App() {
 
-            <BrowserRouter>
-                <div>
-                    <h1><Header/></h1>
-                    <Route exact path='/' component={StreamList}/>
-                    <Route exact path='/streams/new' component={StreamCreate}/>
-                    <Route exact path='/streams/edit' component={StreamEdit}/>
-                    <Route exact path='/streams/delete' component={StreamDelete}/>
-                    <Route exact path='/streams/show' component={StreamShow}/>
+   const [usersList,setUsersList] =useState([])
 
-                </div>
+    const addUserHandler =(uName,uAge) =>{
+       setUsersList((prevUsersList)=>{
+           return [...prevUsersList,{name :uName,age :uAge,id:Math.random().toString()}]
+       })
+    }
 
-            </BrowserRouter>
 
-        </div>
-    )
+  return (
+    <div>
+      <AddUser onAddUser ={addUserHandler}/>
+      <UsersList users ={usersList}/>
+    </div>
+  );
 }
 
-export default App
+export default App;
