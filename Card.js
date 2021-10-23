@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
+import classes from "./Card.module.css"
 
-const Card = ({ name, email, id }) => {
-  return (
-    <div className='tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5'>
-      <img alt='robots' src={`https://robohash.org/${id}?size=200x200`} />
-      <div>
-        <h2>{name}</h2>
-        <p>{email}</p>
-      </div>
-    </div>
-  );
+const Card =props=>{
+    return(
+        <div className={`${classes.card} ${props.classname}`}>
+            {props.children}
+        </div>
+    )
+
 }
 
-export default Card;
+export default Card
