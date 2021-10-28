@@ -1,21 +1,17 @@
-import React from "react"
-import SongList from "./SongList";
-import SongDetail from "./SongDetail";
-
+import React,{useState} from "react";
+import ResourceList from "./ResourceList";
 const App =()=>{
+
+    const [resource,setResource] =useState("posts")
+console.log(resource)
     return(
-        <div className="ui container grid">
-            <div className="ui row">
-                <div className="column eight wide">
-                    <SongList/>
-
-                </div>
-                <div className="column eight wide">
-                    <SongDetail/>
-                </div>
-
+        <div className="ui left aligned basic segment">
+            <div className="ui container">
+                <button className="ui button primary" onClick={()=>setResource("posts")}>Posts</button>
+                <button className="ui button primary" onClick={()=>setResource("todos")}>Todos</button>
+                <button className="ui button primary" onClick={()=>setResource("users")}>Users</button>
             </div>
-
+            <ResourceList resource={resource}/>
         </div>
     )
 }
