@@ -1,19 +1,32 @@
-import React,{useState} from "react";
-import ResourceList from "./ResourceList";
-const App =()=>{
+import React from "react";
+import SearchBar from "./SearchBar";
+import unsplash from "../api/unsplash";
+import ImageList from "./ImageList";
 
-    const [resource,setResource] =useState("posts")
-console.log(resource)
-    return(
-        <div className="ui left aligned basic segment">
-            <div className="ui container">
-                <button className="ui button primary" onClick={()=>setResource("posts")}>Posts</button>
-                <button className="ui button primary" onClick={()=>setResource("todos")}>Todos</button>
-                <button className="ui button primary" onClick={()=>setResource("users")}>Users</button>
+class App extends React.Component{
+    state ={
+        images :[]
+    }
+
+  onSearchSubmit= async (term)=>{
+      const responce = await unsplash.get('/search/photos',{
+            params :{query:term},
+
+        })
+
+       this.setState({images:responce.data.results})
+    }
+
+    render() {
+        return (
+            <div className="ui container" style={{marginTop:"15px"}}>
+                <SearchBar onSubmit={this.onSearchSubmit}/>
+                <ImageList images={this.state.images}/>
             </div>
-            <ResourceList resource={resource}/>
-        </div>
-    )
+        )
+    }
+
+
 }
 
 export default App
