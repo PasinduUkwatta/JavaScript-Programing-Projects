@@ -1,20 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
-import { createStore ,applyMiddleware,compose} from  'redux'
+import {combineReducers} from 'redux'
+import authReducer from "./authReducer";
 
-
-import reducers from "./reducers"
-import App from './components/App'
-
-const composeEnhancers =window.__REDUX_DEVTOOLS_EXTENTION_COMPOSE__||compose
-const store = createStore(
-    reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-
-)
-
-ReactDOM.render(
-    <Provider store ={store}>
-        <App />
-    </Provider>,
-    document.querySelector('#root'))
+export default combineReducers({
+   auth :authReducer
+})
