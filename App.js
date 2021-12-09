@@ -1,62 +1,49 @@
-import React from "react";
-import SearchBar from "./SearchBar";
-import youtube from "../apis/youtube";
-import VideoList from "./VideoList";
-import VideoDetail from "./VideoDetail";
+import React, { useState } from "react";
 
-class App extends React.Component{
+import MoviesList from "./components/MoviesList";
+import "./App.css";
 
-    state ={videos :[],selectedVideo :null}
+function App() {
+  const [movies, setMovies] = useState([]);
+  // const dummyMovies = [
+  //   {
+  //     id: 1,
+  //     title: "Some Dummy Movie",
+  //     openingText: "This is the opening text of the movie",
+  //     releaseDate: "2021-05-18",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Some Dummy Movie 2",
+  //     openingText: "This is the second opening text of the movie",
+  //     releaseDate: "2021-05-19",
+  //   },
+  // ];
 
-    componentDidMount() {
-        this.onTermSubmit('youtube')
-    }
+  async function fetchMovieHandler() {
+    const response = await fetch("https://swapi.dev/api/films/");
+    const data = await response.json();
+    const transformedMovies = data.results.map((movieData) => {
+      return {
+        id: movieData.episode_id,
+        title: movieData.title,
+        openingText: movieData.opening_crawl,
+        releasedDate: movieData.released_date,
+      };
+    });
+    setMovies(transformedMovies);
+  }
 
-    onTermSubmit =async (term)=>{
-       const responce = await youtube.get("/search",{
-            params:{
-                q:term
-            }
-        })
-
-        this.setState(
-            {videos :responce.data.items,
-                selectedVideo :responce.data.items[0]
-            }
-
-            )
-
-    }
-
-    onVideoSelect =(video)=>{
-        console.log("from the app",video)
-        this.setState(
-            {selectedVideo:video},
-
-            )
-
-    }
-
-    render() {
-        return(
-            <div className="ui container">
-                <SearchBar onFormSubmit={this.onTermSubmit}/>
-                <div className="ui grid">
-                    <div className="ui row">
-                        <div className="eleven wide column">
-                            <VideoDetail video={this.state.selectedVideo}/>
-
-                        </div>
-                        <div className="five wide column">
-                            <VideoList onVideoSelect={this.onVideoSelect} videos ={this.state.videos}/>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        )
-    }
+  return (
+    <React.Fragment>
+      <section>
+        <button onClick={fetchMovieHandler}>Fetch Movies</button>
+      </section>
+      <section>
+        <MoviesList movies={movies} />
+      </section>
+    </React.Fragment>
+  );
 }
 
-export default App
+export default App;
