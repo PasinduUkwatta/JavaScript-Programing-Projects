@@ -1,0 +1,66 @@
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+console.log(movements);
+
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+
+console.log(depositsFor);
+
+const withdrawls = movements.filter(function (mov) {
+  return mov < 0;
+});
+
+console.log(withdrawls);
+
+//accumlitaor is to take the summation of the whole array
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  console.log(`Iteration No : ${i} :${acc}`);
+  return acc + cur;
+}, 0);
+
+console.log(balance);
+
+let balance2 = 0;
+
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+const calcPrintBlance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcPrintBlance(account1.movements);
+
+//maximum value of the movements
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else acc < mov;
+  return mov;
+}, movements[0]);
+
+console.log(max);
+
+const calcAge = function (movements) {
+  const dogAge = movements.reduce(age => {
+    if (age < 2) {
+      return age * 2;
+    } else if (age >= 2) {
+      return 16 + age * 2;
+    } else {
+      return 18;
+    }
+  });
+};
+
+const TEST_DATA_1 = [5, 2, 4, 1, 15, 8, 3];
+const TEST_DATA_2 = [16, 6, 10, 5, 6, 1, 4];
+
+console.log(TEST_DATA_1);
+console.log(calcAge(TEST_DATA_1));
