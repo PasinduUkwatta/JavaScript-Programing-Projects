@@ -1,161 +1,332 @@
-// Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-/*
-///////////////////////////////////////
-// Using Google, StackOverflow and MDN
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// BANKIST APP
 
-// PROBLEM 1:
-// We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
-
-const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
-
-// 1) Understanding the problem
-// - What is temp amplitude? Answer: difference between highest and lowest temp
-// - How to compute max and min temperatures?
-// - What's a sensor error? And what do do?
-
-// 2) Breaking up into sub-problems
-// - How to ignore errors?
-// - Find max value in temp array
-// - Find min value in temp array
-// - Subtract min from max (amplitude) and return it
-
-const calcTempAmplitude = function (temps) {
-  let max = temps[0];
-  let min = temps[0];
-
-  for (let i = 0; i < temps.length; i++) {
-    const curTemp = temps[i];
-    if (typeof curTemp !== 'number') continue;
-
-    if (curTemp > max) max = curTemp;
-    if (curTemp < min) min = curTemp;
-  }
-  console.log(max, min);
-  return max - min;
+// Data
+const account1 = {
+  owner: 'Jonas Schmedtmann',
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
 };
-const amplitude = calcTempAmplitude(temperatures);
-console.log(amplitude);
 
-// PROBLEM 2:
-// Function should now receive 2 arrays of temps
-
-// 1) Understanding the problem
-// - With 2 arrays, should we implement functionality twice? NO! Just merge two arrays
-
-// 2) Breaking up into sub-problems
-// - Merge 2 arrays
-
-const calcTempAmplitudeNew = function (t1, t2) {
-  const temps = t1.concat(t2);
-  console.log(temps);
-
-  let max = temps[0];
-  let min = temps[0];
-
-  for (let i = 0; i < temps.length; i++) {
-    const curTemp = temps[i];
-    if (typeof curTemp !== 'number') continue;
-
-    if (curTemp > max) max = curTemp;
-    if (curTemp < min) min = curTemp;
-  }
-  console.log(max, min);
-  return max - min;
+const account2 = {
+  owner: 'Jessica Davis',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
 };
-const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
-console.log(amplitudeNew);
 
-
-///////////////////////////////////////
-// Debugging with the Console and Breakpoints
-const measureKelvin = function () {
-  const measurement = {
-    type: 'temp',
-    unit: 'celsius',
-
-    // C) FIX
-    // value: Number(prompt('Degrees celsius:')),
-    value: 10,
-  };
-
-  // B) FIND
-  console.table(measurement);
-
-  // console.log(measurement.value);
-  // console.warn(measurement.value);
-  // console.error(measurement.value);
-
-  const kelvin = measurement.value + 273;
-  return kelvin;
+const account3 = {
+  owner: 'Steven Thomas Williams',
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
 };
-// A) IDENTIFY
-console.log(measureKelvin());
 
-// Using a debugger
-const calcTempAmplitudeBug = function (t1, t2) {
-  const temps = t1.concat(t2);
-  console.log(temps);
-
-  let max = 0;
-  let min = 0;
-
-  for (let i = 0; i < temps.length; i++) {
-    const curTemp = temps[i];
-    if (typeof curTemp !== 'number') continue;
-
-    if (curTemp > max) max = curTemp;
-    if (curTemp < min) min = curTemp;
-  }
-  console.log(max, min);
-  return max - min;
+const account4 = {
+  owner: 'Sarah Smith',
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
 };
-const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
-// A) IDENTIFY
-console.log(amplitudeBug);
+
+const accounts = [account1, account2, account3, account4];
+
+// Elements
+const labelWelcome = document.querySelector('.welcome');
+const labelDate = document.querySelector('.date');
+const labelBalance = document.querySelector('.balance__value');
+const labelSumIn = document.querySelector('.summary__value--in');
+const labelSumOut = document.querySelector('.summary__value--out');
+const labelSumInterest = document.querySelector('.summary__value--interest');
+const labelTimer = document.querySelector('.timer');
+
+const containerApp = document.querySelector('.app');
+const containerMovements = document.querySelector('.movements');
+
+const btnLogin = document.querySelector('.login__btn');
+const btnTransfer = document.querySelector('.form__btn--transfer');
+const btnLoan = document.querySelector('.form__btn--loan');
+const btnClose = document.querySelector('.form__btn--close');
+const btnSort = document.querySelector('.btn--sort');
+
+const inputLoginUsername = document.querySelector('.login__input--user');
+const inputLoginPin = document.querySelector('.login__input--pin');
+const inputTransferTo = document.querySelector('.form__input--to');
+const inputTransferAmount = document.querySelector('.form__input--amount');
+const inputLoanAmount = document.querySelector('.form__input--loan-amount');
+const inputCloseUsername = document.querySelector('.form__input--user');
+const inputClosePin = document.querySelector('.form__input--pin');
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURES
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+/////////////////////////////////////////////////
+
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// console.log(arr.slice(2));
+// console.log(arr);
+// console.log(arr.slice(2, 4));
+// console.log(arr.slice(-2));
+// console.log(arr.slice(1, -1));
+// console.log(...arr);
+
+// //splice method
+
+// // console.log(arr.splice(2));
+// console.log(arr);
+
+// //remove the last element
+// arr.splice(-1);
+
+// console.log(arr);
+// arr.splice(1, 2);
+
+// console.log(arr);
+
+// //reverse the array
+// arr = ['a', 'b', 'c', 'd', 'e'];
+
+// const arr2 = ['j', 'i', 'h', 'g', 'f'];
+
+// console.log(arr2.reverse());
+// console.log(arr2);
+
+// //concat method
+
+// const letters = arr.concat(arr2);
+
+// console.log(letters);
+// console.log(...arr, ...arr2);
+
+// //join method
+// console.log(letters.join('-'));
+
+// //loop array
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// // for (const movement of movements) {
+// for (const [i, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`Movement ${i} : You deposied ${movement}`);
+//   } else {
+//     console.log(`Movement ${i} :You deposited ${Math.abs(movement)}`);
+//   }
+// }
+
+// console.log('-----------------FOR EACH LOOP-------------------------');
+// movements.forEach(function (movement, index, arr) {
+//   if (movement > 0) {
+//     console.log(`Movement ${index} :You deposied ${movement}`);
+//   } else {
+//     console.log(`Movement ${index} :You deposited ${Math.abs(movement)}`);
+//   }
+// });
+
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key} :${value}`);
+// });
+
+// const currenciesUnique = new Set(['USD', 'EURO', 'GBP', 'USD', 'EURO', 'GBP']);
+
+// console.log(currenciesUnique);
+
+// currenciesUnique.forEach(function (value, _, map) {
+//   console.log(`${value} :${value}`);
+// });
+
+// //----------------------------------------------------------------------
+
+const displayMovements = function (movements) {
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
+    const html = `
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${
+      i + 1
+    }${type}</div>
+      <div class="movements__value">${mov}</div>
+  </div>
+    `;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+
+displayMovements(account1.movements);
+
+//-----------------------------------------------------------------
+/* 
+Julia and Kate are doing a study on dogs. So each of them asked 5 dog owners about their dog's age, and stored the data into an array (one array for each). For now, they are just interested in knowing whether a dog is an adult or a puppy. A dog is an adult if it is at least 3 years old, and it's a puppy if it's less than 3 years old.
+
+Create a function 'checkDogs', which accepts 2 arrays of dog's ages ('dogsJulia' and 'dogsKate'), and does the following things:
+
+1. Julia found out that the owners of the FIRST and the LAST TWO dogs actually have cats, not dogs! So create a shallow copy of Julia's array, and remove the cat ages from that copied array (because it's a bad practice to mutate function parameters)
+2. Create an array with both Julia's (corrected) and Kate's data
+3. For each remaining dog, log to the console whether it's an adult ("Dog number 1 is an adult, and is 5 years old") or a puppy ("Dog number 2 is still a puppy 🐶")
+4. Run the function for both test datasets
+
+HINT: Use tools from all lectures in this section so far 😉
+
+TEST DATA 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3]
+TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
+
+GOOD LUCK 😀
 */
 
-///////////////////////////////////////
-// Coding Challenge #1
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   const dogsJuliaCorrected = dogsJulia.slice();
+//   dogsJuliaCorrected.splice(0, 1);
+//   dogsJuliaCorrected.splice(-2);
+//   console.log(dogsJuliaCorrected);
 
-/*
-Given an array of forecasted maximum temperatures, the thermometer displays a string with these temperatures.
+//   const dogs = dogsJuliaCorrected.concat(dogsKate);
+//   console.log(dogs);
 
-Example: [17, 21, 23] will print "... 17ºC in 1 days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+//   // "Dog number 1 is an adult, and is 5 years old") or a puppy ("Dog number 2 is still a puppy 🐶"
 
-Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console.
+//   dogs.forEach(function (dog, i) {
+//     if (dog >= 3) {
+//       console.log(`Dog number ${i + 1} is an adult, and ${dog} years old`);
+//     } else {
+//       console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+//     }
+//   });
+// };
 
-Use the problem-solving framework: Understand the problem and break it up into sub-problems!
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+// checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
-TEST DATA 1: [17, 21, 23]
-TEST DATA 2: [12, 5, -5, 0, 4]
-*/
+//----------------------------------------------------------------------------
 
-/*
-// 1) Understanding the problem
-// - Array transformed to string, separated by ...
-// - What is the X days? Answer: index + 1
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// 2) Breaking up into sub-problems
-// - Transform array into string
-// - Transform each element to string with ºC
-// - Strings needs to contain day (index + 1)
-// - Add ... between elements and start and end of string
-// - Log string to console
+const euroToUsd = 1.1;
 
-const data1 = [17, 21, 23];
-const data2 = [12, 5, -5, 0, 4];
+const movementsUSD = movements.map(function (mov) {
+  return mov * euroToUsd;
+});
 
-console.log(`... ${data1[0]}ºC ... ${data1[1]}ºC ... ${data1[2]}ºC ...`);
+console.log(movements);
+console.log(movementsUSD);
 
-const printForecast = function (arr) {
-  let str = '';
-  for (let i = 0; i < arr.length; i++) {
-    str += `${arr[i]}ºC in ${i + 1} days ... `;
+const movementsUSDFor = [];
+
+for (const mov of movements) movementsUSDFor.push(mov * euroToUsd);
+
+console.log(movementsUSDFor);
+
+const movementsUSDArrow = movements.map(mov => mov * euroToUsd);
+
+console.log(movementsUSDArrow);
+
+const movementsDescription = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    return `Movement ${i + 1} :You deposited ${mov}`;
+  } else {
+    return `Movement ${i + 1} :You withdrew ${Math.abs(mov)}`;
   }
-  console.log('...' + str);
-};
-printForecast(data1);
-*/
+});
 
+console.log(movementsDescription);
+
+const user = 'Steven Thomas Williams';
+
+const createUserNames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUserNames(accounts);
+
+console.log(accounts);
+
+//-------------------------------------------------------------
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+console.log(movements);
+
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+
+console.log(depositsFor);
+
+const withdrawls = movements.filter(function (mov) {
+  return mov < 0;
+});
+
+console.log(withdrawls);
+
+//accumlitaor is to take the summation of the whole array
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  console.log(`Iteration No : ${i} :${acc}`);
+  return acc + cur;
+}, 0);
+
+console.log(balance);
+
+let balance2 = 0;
+
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
+
+const calcPrintBlance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcPrintBlance(account1.movements);
+
+//maximum value of the movements
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else acc < mov;
+  return mov;
+}, movements[0]);
+
+console.log(max);
+
+const calcAge = function (movements) {
+  const dogAge = movements.reduce(age => {
+    if (age < 2) {
+      return age * 2;
+    } else if (age >= 2) {
+      return 16 + age * 2;
+    } else {
+      return 18;
+    }
+  });
+};
+
+const TEST_DATA_1 = [5, 2, 4, 1, 15, 8, 3];
+const TEST_DATA_2 = [16, 6, 10, 5, 6, 1, 4];
+
+console.log(TEST_DATA_1);
+console.log(calcAge(TEST_DATA_1));
+
+console.log('Happy New Year 2022!');
+console.log('All the best for the New Year!');
